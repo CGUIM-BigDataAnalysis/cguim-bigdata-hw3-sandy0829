@@ -41,10 +41,25 @@ output: github_document
 ## 網站資料爬取
 ```{r}
 #這是R Code Chunk
-library(rvest) ##第一次使用要先安裝 install.packages("rvest")
+##第一次使用要先安裝 install.packages("rvest")
 ##read_html
 ##html_nodes
 ##html_text
+install.packages("rvest")
+library(rvest)
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index.html"
+postTitle<- read_html(PPT) %>%
+html_nodes(".title") %>%
+html_text()
+postTitle
+postPushNum<- read_html(PPT) %>%
+html_nodes(".pushnum") %>%
+html_text()
+postPushNum
+postAuthor<- read_html(PPT) %>%
+html_nodes(".author") %>%
+html_text()
+postAuthor
 ```
 
 ## 爬蟲結果呈現
