@@ -60,6 +60,32 @@ postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
 postAuthor
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index1.html"
+postTitle<- read_html(PPT) %>%
+html_nodes(".title") %>%
+html_text()
+postTitle
+postPushNum<- read_html(PPT) %>%
+html_nodes(".pushnum") %>%
+html_text()
+postPushNum
+postAuthor<- read_html(PPT) %>%
+html_nodes(".author") %>%
+html_text()
+postAuthor
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index2.html"
+postTitle<- read_html(PPT) %>%
+html_nodes(".title") %>%
+html_text()
+postTitle
+postPushNum<- read_html(PPT) %>%
+html_nodes(".pushnum") %>%
+html_text()
+postPushNum
+postAuthor<- read_html(PPT) %>%
+html_nodes(".author") %>%
+html_text()
+postAuthor
 ```
 
 ## 爬蟲結果呈現
