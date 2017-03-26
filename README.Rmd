@@ -40,7 +40,7 @@ output: github_document
 
 ## 網站資料爬取
 ```{r}
-#這是R Code Chunk
+##這是R Code Chunk
 ##第一次使用要先安裝 install.packages("rvest")
 ##read_html
 ##html_nodes
@@ -51,41 +51,81 @@ PPT<- "https://www.ptt.cc/bbs/Tech_Job/index.html"
 postTitle<- read_html(PPT) %>%
 html_nodes(".title") %>%
 html_text()
-postTitle
 postPushNum<- read_html(PPT) %>%
-html_nodes(".pushnum") %>%
+html_nodes(".nrec") %>%
 html_text()
-postPushNum
 postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
-postAuthor
+df1<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
+knitr::kable(
+df1[1:12,c("Title","PushNum","Author")])
 PPT<- "https://www.ptt.cc/bbs/Tech_Job/index1.html"
 postTitle<- read_html(PPT) %>%
 html_nodes(".title") %>%
 html_text()
-postTitle
 postPushNum<- read_html(PPT) %>%
-html_nodes(".pushnum") %>%
+html_nodes(".nrec") %>%
 html_text()
-postPushNum
 postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
-postAuthor
+df2<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
+knitr::kable(
+df2[1:20,c("Title","PushNum","Author")])
 PPT<- "https://www.ptt.cc/bbs/Tech_Job/index2.html"
 postTitle<- read_html(PPT) %>%
 html_nodes(".title") %>%
 html_text()
-postTitle
 postPushNum<- read_html(PPT) %>%
-html_nodes(".pushnum") %>%
+html_nodes(".nrec") %>%
 html_text()
-postPushNum
 postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
-postAuthor
+df3<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
+knitr::kable(
+df3[1:20,c("Title","PushNum","Author")])
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index3.html"
+postTitle<- read_html(PPT) %>%
+html_nodes(".title") %>%
+html_text()
+postPushNum<- read_html(PPT) %>%
+html_nodes(".nrec") %>%
+html_text()
+postAuthor<- read_html(PPT) %>%
+html_nodes(".author") %>%
+html_text()
+df4<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
+knitr::kable(
+df4[1:20,c("Title","PushNum","Author")])
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index4.html"
+postTitle<- read_html(PPT) %>%
+html_nodes(".title") %>%
+html_text()
+postPushNum<- read_html(PPT) %>%
+html_nodes(".nrec") %>%
+html_text()
+postAuthor<- read_html(PPT) %>%
+html_nodes(".author") %>%
+html_text()
+df5<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
+knitr::kable(
+df5[1:20,c("Title","PushNum","Author")])
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index5.html"
+postTitle<- read_html(PPT) %>%
+html_nodes(".title") %>%
+html_text()
+postPushNum<- read_html(PPT) %>%
+html_nodes(".nrec") %>%
+html_text()
+postAuthor<- read_html(PPT) %>%
+html_nodes(".author") %>%
+html_text()
+df6<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
+knitr::kable(
+df6[1:20,c("Title","PushNum","Author")])
+
 ```
 
 ## 爬蟲結果呈現
