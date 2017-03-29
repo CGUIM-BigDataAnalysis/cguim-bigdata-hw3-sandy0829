@@ -45,7 +45,7 @@ output: github_document
 ##read_html
 ##html_nodes
 ##html_text
-install.packages("rvest")
+##install.packages("rvest")
 library(rvest)
 PPT<- "https://www.ptt.cc/bbs/Tech_Job/index.html"
 postTitle<- read_html(PPT) %>%
@@ -58,9 +58,7 @@ postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
 df1<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
-knitr::kable(
-df1[1:12,c("Title","PushNum","Author")])
-PPT<- "https://www.ptt.cc/bbs/Tech_Job/index1.html"
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index2588.html"
 postTitle<- read_html(PPT) %>%
 html_nodes(".title") %>%
 html_text()
@@ -71,9 +69,7 @@ postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
 df2<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
-knitr::kable(
-df2[1:20,c("Title","PushNum","Author")])
-PPT<- "https://www.ptt.cc/bbs/Tech_Job/index2.html"
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index2587.html"
 postTitle<- read_html(PPT) %>%
 html_nodes(".title") %>%
 html_text()
@@ -84,9 +80,7 @@ postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
 df3<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
-knitr::kable(
-df3[1:20,c("Title","PushNum","Author")])
-PPT<- "https://www.ptt.cc/bbs/Tech_Job/index3.html"
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index2586.html"
 postTitle<- read_html(PPT) %>%
 html_nodes(".title") %>%
 html_text()
@@ -97,9 +91,7 @@ postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
 df4<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
-knitr::kable(
-df4[1:20,c("Title","PushNum","Author")])
-PPT<- "https://www.ptt.cc/bbs/Tech_Job/index4.html"
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index2585.html"
 postTitle<- read_html(PPT) %>%
 html_nodes(".title") %>%
 html_text()
@@ -110,9 +102,7 @@ postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
 df5<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
-knitr::kable(
-df5[1:20,c("Title","PushNum","Author")])
-PPT<- "https://www.ptt.cc/bbs/Tech_Job/index5.html"
+PPT<- "https://www.ptt.cc/bbs/Tech_Job/index2584.html"
 postTitle<- read_html(PPT) %>%
 html_nodes(".title") %>%
 html_text()
@@ -123,28 +113,33 @@ postAuthor<- read_html(PPT) %>%
 html_nodes(".author") %>%
 html_text()
 df6<- data.frame(Title=postTitle,PushNum=postPushNum,Author=postAuthor)
-knitr::kable(
-df6[1:20,c("Title","PushNum","Author")])
-
+total<- rbind(df1,df2,df3,df4,df5,df6)
+total
 ```
 
 ## 爬蟲結果呈現
 ```{r}
 #這是R Code Chunk
-knitr::kable(iris) ##請將iris取代為上個步驟中產生的爬蟲資料資料框
+knitr::kable(total) ##請將iris取代為上個步驟中產生的爬蟲資料資料框
 ```
 
 ## 解釋爬蟲結果 
 ```{r}
 #這是R Code Chunk
+nrow(total)
+##總共有110篇文章，其中最多文章是請教別人問題的文章；或者是發一些有關工作的新聞
 ```
 
 解釋解釋解釋解釋
 
 ```{r}
 #這是R Code Chunk
+table(total$Author)
+##每個作者的發文數都差不多都只有一篇或兩篇，被刪文的有16篇
 ```
 
 解釋解釋解釋解釋
 
 人工結論與解釋解釋解釋解釋解釋解釋解釋
+
+
